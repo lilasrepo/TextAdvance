@@ -1,4 +1,4 @@
-﻿using ECommons.Automation;
+using ECommons.Automation;
 using ECommons.Automation.LegacyTaskManager;
 using FFXIVClientStructs.FFXIV.Client.Game;
 using FFXIVClientStructs.FFXIV.Client.UI;
@@ -47,7 +47,7 @@ internal static unsafe class ExecRequestFill
     {
         if (SlotsFilled.Contains(i)) return true;
 
-        var contextMenu = (AtkUnitBase*)Svc.GameGui.GetAddonByName("ContextIconMenu", 1).Address;
+        var contextMenu = (AtkUnitBase*)Svc.GameGui.GetAddonByName("ContextIconMenu", 1);
 
         if (contextMenu is null || !contextMenu->IsVisible)
         {

@@ -1,4 +1,4 @@
-﻿
+
 using Dalamud.Game.Addon.Lifecycle;
 using Dalamud.Game.Addon.Lifecycle.AddonArgTypes;
 using ECommons.UIHelpers.AddonMasterImplementations;
@@ -24,7 +24,7 @@ internal static unsafe class ExecSkipTalk
 
     private static void Click(AddonEvent type, AddonArgs args)
     {
-        if (IsEnabled && ((AtkUnitBase*)args.Addon.Address)->IsVisible)
+        if (IsEnabled && ((AtkUnitBase*)args.Addon)->IsVisible)
         {
             new AddonMaster.Talk(args.Addon).Click();
         }

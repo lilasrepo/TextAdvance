@@ -1,4 +1,4 @@
-﻿using Dalamud.Game.Addon.Lifecycle;
+using Dalamud.Game.Addon.Lifecycle;
 using Dalamud.Game.Addon.Lifecycle.AddonArgTypes;
 using ECommons.ChatMethods;
 using ECommons.ExcelServices;
@@ -23,7 +23,7 @@ namespace TextAdvance.Executors
 
         private static void OnJournalResultSetup(AddonEvent type, AddonArgs args)
         {
-            var addon = (AtkUnitBase*)args.Addon.Address;
+            var addon = (AtkUnitBase*)args.Addon;
             var canvas = ((AtkComponentNode*)addon->UldManager.NodeList[7])->Component;
             PluginLog.Information($"Component: {(nint)canvas:X16}");
             if (IsEnabled)

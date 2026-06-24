@@ -1,0 +1,13 @@
+# Path-level walk-back pins for TextAdvance — see plugin_update SKILL.md.
+# Pinned 2026-06-24 (Layer 3 / frozen-version guard): TextAdvance was promoted from TRACKS_UPSTREAM to
+# TC-managed because upstream is dormant (tag from 2026-05-03, HEAD carries no version bump) AND it ships
+# a long-stranded TC-ONLY fix that upstream will never carry: the 2026-06-04 walk-back-ECommons user32
+# FindWindowEx/SendMessage EntryPoint fix (commit 2b55cc3c; see memory project_ecommons_libraryimport_user32_entrypoint)
+# which causes EntryPointNotFoundException at runtime. With upstream not bumping <Version>, that fix sat
+# unshipped behind v3.3.0.1 (clobbered, clients never offered it). Bumped <Version> 3.3.0.1 -> 3.3.0.2 and
+# pinned the csproj take-ours so it sticks; the Layer-2 auto-bump manages it on future refreshes. If
+# upstream TextAdvance becomes active again (regularly bumps <Version>), this pin can be removed to let it
+# track upstream once more. Trade-off: upstream csproj *structural* changes (new PackageReference/target)
+# no longer auto-flow — they surface as a loud build failure on the next refresh, merged by hand.
+# See FORWARD_PORT_REFERENCE.md §0 + memory project_lilasrepo_version_pins.
+TextAdvance/TextAdvance.csproj

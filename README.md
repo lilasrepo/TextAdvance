@@ -1,52 +1,54 @@
-﻿# TextAdvance
-Quest speedrunning assistance tool. Automatically confirm quest acceptation and completion, skip subtitles, cutscenes and most of prompts. 
-## Become a Supporter!
-If you like TextAdvance, please consider becoming a supporter on Patreon or via other means! This will help me to continue updating TextAdvance and work on new plugins and features and you will receive benefits such as early progress updates, priority support, prioritized feature requests, early testing builds and private tools. 
-- [Subscribe on Patreon (Starts from $1)](https://subscribe.nightmarexiv.org/) - eligible for Discord role
-- [Donate Litecoin, Bitcoin, Tether or other crypto](https://crypto.nightmarexiv.org/) - eligible for Discord role
-- [One-time donation on Ko-Fi](https://donate.nightmarexiv.org/)
+# TextAdvance（繁中移植版 · TC12） / Traditional-Chinese Port
 
-### Also:
-- [Explore other plugins I maintain or contributed to](https://explore.nightmarexiv.org/)
-- [Join NightmareXIV Discord server to receive fast support and pings about plugin updates](https://discord.gg/BeeRFKDJD3)
-## Description
+> 任務速通輔助工具，自動跳過字幕對話框並確認跳過過場。<br>
+> Quest speedrunning assistance — auto-advances dialogue and confirms cutscene skips.
 
-<p align="center"><img src="https://raw.githubusercontent.com/NightmareXIV/TextAdvance/master/meta/image.png"></p>
+**繁體中文**：這是 **[TextAdvance](https://github.com/NightmareXIV/TextAdvance)** 的繁體中文客戶端移植版，對應 **FFXIV 7.1 / yanmucorp Dalamud API12（.NET 9）**。本專案僅做相容性移植，**非官方、非原作維護**；所有原始功能與設計著作權歸原作者 **NightmareXIV**。
 
-Primary functions:
-- Automatically skip quest subtitles
-- Automatically skip cutscenes (only ones that can be normally skipped)
-- Automatically confirm quests acception and completion
-- Automatically interact with nearby quest entities
-- Automatically pick most valuable rewards
-- Automatically fill and confirm request popups
-- Configurable buttons to temporarily pause or enable plugin.
+**English**: A Traditional-Chinese-client port of **[TextAdvance](https://github.com/NightmareXIV/TextAdvance)** targeting **FFXIV 7.1 / yanmucorp Dalamud API12 (.NET 9)**. Compatibility port only — **unofficial and not maintained by the original author**. All original work © **NightmareXIV**.
 
-Additional functions:
-- Integration with Splatoon, which highlights nearby quest-related entities. You can get Splatoon from Puni.sh repo `https://love.puni.sh/ment.json`. [Read how to install Splatoon here.](https://github.com/PunishXIV/Splatoon?tab=readme-ov-file#installation)
-- Integration with vnavmesh, which upon using `/at mtq` will attempt to build a path to nearest quest entity and `/at mtf` which will attempt to build a path to flag on map. You can get vnavmesh from third party repo `https://puni.sh/api/repository/veynrepo`
+---
 
-**TextAdvance automatically disables itself every time you log out and requires you to type `/at` command whenever you want to reenable it.** You can override this behavior by enabling "Don't auto-disable plugin on logout" option.
+## 這是什麼 / About
 
-Alternatively, you can configure characters on which you want it to automatically enable upon log in.
-## This plugin is in development
-This means that there are still features that I would like to implement in future or features that I would like to enhance, as well as that I'm accepting suggestions and feature requests.
-## Installation
-1. Install [FFXIVQuickLauncher](https://github.com/goatcorp/FFXIVQuickLauncher?tab=readme-ov-file#xivlauncher-----) and enable Dalamud in it's settings. You have to run the game through FFXIVQuickLauncher in order for any of these plugins to work.
-2. Open Dalamud settings by typing `/xlsettings` in game chat.
-3. Go to "Experimental" tab.
-4. Find "Custom Plugin Repositories" section, agree with listed terms if needed and paste the following link into text input field: `https://github.com/NightmareXIV/MyDalamudPlugins/raw/main/pluginmaster.json`
-5. Click "Save" button.
+自動推進任務對話、自動接取／繳交任務、自動確認跳過過場動畫，大幅加速跑任務的流程。
 
-You should now have NightmareXIV plugins available in your plugin installer. <br>
-Open plugin installer by typing `/xlplugins` in game chat, go to "Available plugins" section and search for a plugin you would like to install.
+Automatically advances quest dialogue, accepts/turns in quests and confirms cutscene skips, greatly speeding up questing.
 
-![image](https://github.com/NightmareXIV/MyDalamudPlugins/blob/main/meta/install/installer.png?raw=true)
+## 安裝 / Installation
 
-## Support
-Join NightmareXIV Discord server to receive support for this plugin: https://discord.gg/m8NRt4X8Gf
-[![](https://dcbadge.vercel.app/api/server/m8NRt4X8Gf)](https://discord.gg/m8NRt4X8Gf)
+**繁體中文**
+1. 使用 **XIVTCLauncher** 啟動繁體中文客戶端。
+2. 遊戲內輸入 `/xlsettings` → 切到 **Experimental** 分頁 → **Custom Plugin Repositories（自訂插件庫）**。
+3. 貼上下列網址並按 **+** 儲存：
+   ```
+   https://raw.githubusercontent.com/lilasrepo/DalamudPlugins/main/pluginmaster.json
+   ```
+4. 輸入 `/xlplugins`，搜尋 **TextAdvance (TC12)** → 安裝 → 啟用。
 
-The server operates on a ticket-based system. Please create a ticket and describe your issue.
-Additionally, you may create an issue in the repository. Reply time for tickets may be significantly longer than on Discord, however, the issue does not have any risks to be lost.
-(Basically, if you want to report a critical bug or receive help, prefer Discord, if you want to suggest feature or report non-critical bug, prefer Github)
+**English**
+1. Launch the Traditional-Chinese client with **XIVTCLauncher**.
+2. In-game, type `/xlsettings` → **Experimental** tab → **Custom Plugin Repositories**.
+3. Add this URL and save with **+**:
+   ```
+   https://raw.githubusercontent.com/lilasrepo/DalamudPlugins/main/pluginmaster.json
+   ```
+4. Type `/xlplugins`, search **TextAdvance (TC12)** → Install → Enable.
+
+## 對應版本 / Compatibility
+
+| 項目 / Item | 版本 / Version |
+|---|---|
+| 遊戲 / Game | FFXIV 7.1（繁中客戶端 / TC client） |
+| Dalamud | yanmucorp API12（.NET 9） |
+| 移植自上游 / Ported from upstream | v3.3.0.1 |
+
+## 原作與授權 / Credits & License
+
+本專案 fork 自 **[NightmareXIV/TextAdvance](https://github.com/NightmareXIV/TextAdvance)**，授權沿用上游；所有原始功能著作權歸 **NightmareXIV**。<br>
+Forked from **[NightmareXIV/TextAdvance](https://github.com/NightmareXIV/TextAdvance)**. License follows upstream; all original work © **NightmareXIV**.
+
+## 免責聲明 / Disclaimer
+
+第三方插件，使用風險自負。**移植相關問題請回報到本 repo 的 Issues，請勿打擾上游原作者。**<br>
+Third-party plugin — use at your own risk. **For port-specific issues please open an Issue here; do not contact the upstream author.**
