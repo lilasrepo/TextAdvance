@@ -78,7 +78,7 @@ internal static unsafe class TabDebug
                 var marker = markers[i];
                 if (ThreadLoadImageHandler.TryGetIconTextureWrap(marker.IconId, false, out var tex))
                 {
-                    ImGui.Image(tex.ImGuiHandle, tex.Size);
+                    ImGui.Image(tex.Handle, tex.Size);
                 }
                 ImGuiEx.Text($"{marker.IconId} / {marker.Position} / {Vector3.Distance(Player.Position, marker.Position)}");
                 ImGui.Separator();

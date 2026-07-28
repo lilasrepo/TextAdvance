@@ -33,17 +33,25 @@ public unsafe class MoveManager
     public void MoveToFlag()
     {
         if (!Player.Available) return;
-        if (AgentMap.Instance()->IsFlagMarkerSet == false)
+        // DLLSET-RECHECK(api13 official 13.0.0.16 / CS 0.0.6966): an older CS would restore IsFlagMarkerSet, which
+        // upstream HEAD still uses. Re-judged 2026-07-28 on the official set: AgentMap exposes FlagMarkerCount +
+        // the FlagMapMarkers span and SetFlagMapMarker, with no IsFlagMarkerSet and no singular FlagMapMarker --
+        // identical to the preview set despite CS moving 6716 -> 6966, so the plural form below stands.
+        // porting-note(api13): this DLL set's FFXIVClientStructs (0.0.6716) has no
+        // AgentMap.IsFlagMarkerSet and no singular FlagMapMarker -- both were replaced by
+        // FlagMarkerCount + the FlagMapMarkers span. Upstream HEAD still uses the old
+        // singular shape, so there is nothing to port forward here.
+        if (AgentMap.Instance()->FlagMarkerCount == 0)
         {
             DuoLog.Warning($"Flag is not set");
             return;
         }
-        if (AgentMap.Instance()->FlagMapMarker.TerritoryId != Svc.ClientState.TerritoryType)
+        if (AgentMap.Instance()->FlagMapMarkers[0].TerritoryId != Svc.ClientState.TerritoryType)
         {
             DuoLog.Warning($"Flag is in different zone than current");
             return;
         }
-        var m = AgentMap.Instance()->FlagMapMarker;
+        var m = AgentMap.Instance()->FlagMapMarkers[0];
         var pos = P.NavmeshManager.PointOnFloor(new(m.XFloat, 1024, m.YFloat), false, 5);
         var iterations = 0;
         if (pos == null)
